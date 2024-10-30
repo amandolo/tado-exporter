@@ -1,0 +1,51 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tado-exporter'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tado-exporter",
+                    "--package=tado-exporter"
+                ],
+                "filter": {
+                    "name": "tado-exporter",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "EXPORTER_USERNAME": "andrea.mandolo@gmail.com",
+                "EXPORTER_PASSWORD": "0RMgBlMQLsfQta6dFEC5!poIp",
+                "RUST_LOG": "debug"
+            }
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tado-exporter'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tado-exporter",
+                    "--package=tado-exporter"
+                ],
+                "filter": {
+                    "name": "tado-exporter",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
